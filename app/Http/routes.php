@@ -11,5 +11,18 @@
 |
 */
 
-Route::get('index', 'HomeController@index');
+Route::get('/', 'WelcomeController@index');
 
+Route::get('home', 'HomeController@index');
+
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
+
+
+/* Reservation */
+
+Route::get('reservation', 'ReservationController@index');
+Route::post('check', 'ReservationController@check');
+Route::post('reserve', 'ReservationController@reserve');
