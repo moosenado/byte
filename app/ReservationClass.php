@@ -142,4 +142,8 @@ class ReservationClass {
         }
     }
     
+    public static function getTotalCap(){
+        return DB::table('tables')->sum('capacity');
+    }
+    
 }

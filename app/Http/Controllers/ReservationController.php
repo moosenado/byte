@@ -22,7 +22,9 @@ class ReservationController extends Controller {
         
         $cap = ReservationClass::checkTables($date, $minTime, $maxTime);
         
-        if(($cap + $capacity) > 20) {
+        $totalCap = ReservationClass::getTotalCap();
+        
+        if(($cap + $capacity) > $totalCap) {
             return view("reservation.full");
         }
         else {

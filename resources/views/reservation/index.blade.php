@@ -1,5 +1,6 @@
 <h1>This is the reservation page</h1>
 
+<p>{{ date("Y-m-d", time() + 86400) }}</p>
 
 {!! Form::open(['url' => 'check']) !!}
 <ul>
